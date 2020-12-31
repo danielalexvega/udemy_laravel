@@ -28,4 +28,11 @@ Route::get('/', function () {
 //     return "This is the post with the an id of $id";
 // });
 
-Route::get('/post', '\App\Http\Controllers\PostsController@index');
+// Route::get('/post/{id}', '\App\Http\Controllers\PostsController@index');
+
+
+//Route::resource()  -- this creates all the routes for a Controller
+Route::resource('posts', '\App\Http\Controllers\PostsController');
+Route::get('/contact', '\App\Http\Controllers\PostsController@contact');
+
+Route::get('/post/{id}', '\App\Http\Controllers\PostsController@show_post');
